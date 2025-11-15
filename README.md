@@ -24,8 +24,8 @@ Los usuarios deben poder:
 |------|--------------|---------|
 | 0 | Briefing y análisis de materiales (Figma, imágenes, estructura base) | ✅ Completado |
 | 1 | Setup profesional (estructura, Live Server, Git con flujo `main`/`dev`/`feature/*`) | ✅ Completado |
-| 2 | Diseño y Layout (HTML semántico, tokens y layout mobile-first) | 🟡 En progreso |
-| 3 | Interactividad JS (mostrar/ocultar tooltip de compartir, accesibilidad) | ⏸ Pendiente |
+| 2 | Diseño y Layout (HTML semántico, tokens y layout mobile-first) | ✅ Completado |
+| 3 | Interactividad JS (mostrar/ocultar tooltip de compartir, accesibilidad) | 🟡 En progreso |
 | 4 | QA y Deploy (revisión, Lighthouse, README final, publicación) | ⏸ Pendiente |
 | 5 | Retro final (aprendizajes, mejoras, documentación) | ⏸ Pendiente |
 
@@ -47,12 +47,29 @@ Los usuarios deben poder:
 - Comprender la importancia de aislar fases del proyecto para simular sprints reales.
 - Mejorar la trazabilidad y orden de commits.
 
+### 🧩 Fase 2 (Diseño y Layout)
+- Construir un layout **mobile-first real**, con tipografía, spacing y jerarquía basados en tokens.
+- Aprender a controlar imágenes en diseño responsive:
+  - recorte con `overflow: hidden`,
+  - ajuste proporcional con `object-fit: cover`,
+  - alturas dinámicas según Figma.
+- Entender y aplicar layouts mixtos:
+  - Mobile → grid simple en columna.
+  - Desktop → grid explícito de 2 columnas con control manual de filas.
+- Integrar HTML semántico y accesible (uso de `<time>`, roles y etiquetas correctas).
+- Centrar los componentes desde `<main>` en lugar de desde la card, para mantener un flujo de layout más limpio.
+
 ---
 
 ## 🚀 Próximos pasos
-- Completar la **Fase 2 (Layout)**: tokens, estructura semántica y vista móvil.
-- Integrar **interactividad accesible (Fase 3)**.
-- Publicar versión final en **GitHub Pages** y actualizar este README con capturas y métricas.
+- Implementar la **Fase 3 (Interactividad JS)**:
+  - Tooltip de compartir.
+  - Accesibilidad (`aria-expanded`, `aria-controls`, enfoque con teclado, cerrar con `Esc`).
+- Comenzar la **Fase 4**:
+  - Tests visuales.
+  - Validación con Lighthouse y W3C.
+  - Publicación en GitHub Pages.
+- Añadir capturas finales y métricas al README.
 
 ---
 
@@ -64,5 +81,5 @@ Los usuarios deben poder:
 ---
 
 ## 🏁 Estado actual del proyecto
-🟢 Activo – Avanzando en Fase 2 (Diseño y Layout)  
-📅 Última actualización: 12/11/2025
+🟢 Activo – Próxima fase: **Fase 3 (Interactividad JS)**  
+📅 Última actualización: 15/11/2025
