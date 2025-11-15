@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+:root {
+  /* Colors */
+  --clr-white: hsl(0, 100%, 100%);
+  --clr-grey-900: hsl(217, 19%, 35%);
+  --clr-grey-500: hsl(214, 17%, 51%);
+  --clr-grey-400: hsl(212,23%,69%);
+  --clr-grey-200: hsl(210,46%,95%);
+  /* Main source */
+  --ff-body: "Manrope", sans-serif;
+  --fw-regular: 500;
+  --fw-bold: 700;
+  /* Tiypography (scales) */
+  --fs-body: 0.8125rem; /* 13px */
+  --lh-normal: 1.6;
+  --lh-tight: 1.1;
+  /* Spacing (design scale) */
+  --spacing-0: 0rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-700: 3.5rem;
+  --spacing-800: 4rem;
+  --spacing-1300: 6.5rem;
+  --spacing-2000: 10rem;
+  /* Container */
+  --container-max: 45.7rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  background-color: var(--clr-grey-200);
+  color: var(--clr-grey-900);
+}
+
+main {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding-inline: var(--spacing-400);
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+.card {
+  max-width: var(--container-max);
+  background-color: var(--clr-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  gap: var(--spacing-400);
+}
+.card-body {
+  display: grid;
+  margin-inline: var(--spacing-300);
+  gap: var(--spacing-300);
+}
+.card-title {
+  max-inline-size: 20ch;
+  line-height: var(--lh-tight);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+}
+.card-text {
+  color: var(--clr-grey-500);
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--spacing-300);
+  padding-block-end: var(--spacing-200);
+}
+.card-profile {
+  display: flex;
+  gap: var(--spacing-200);
+}
+.card-avatar {
+  max-width: var(--spacing-500);
+  max-height: var(--spacing-500);
+  border-radius: 50%;
+}
+.card-name {
+  font-weight: var(--fw-bold);
+}
+.card-time {
+  color: var(--clr-grey-500);
+}
+.card-share {
+  display: flex;
+  width: var(--spacing-400);
+  height: var(--spacing-400);
+  border-radius: 50%;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 0;
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .card-media {
+    grid-column: 1;
+    grid-row: 1/span 2;
+  }
+  .card-media img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+  .card-body {
+    grid-column: 2;
+    padding-block-start: var(--spacing-400);
+  }
+  .card-text {
+    max-inline-size: 37ch;
+  }
+  .card-meta {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -47,22 +47,39 @@ Se actualiza con cada cierre de nivel del juego (fase) siguiendo la metodología
 
 ---
 
-## 🧩 Fase 2 – Diseño y Layout
-**Fecha:** En curso  
-**Estado:** 🟡 En progreso
+## 🧩 Fase 2 – Diseño y Layout  
+**Fecha:** 13–15/11/2025
+**Estado:** ✅ Completada
 
 ### 🎯 Objetivo
-Construir el layout responsive y semántico del componente aplicando tokens, HTML estructurado y Mobile First.
+Construir el layout responsive (mobile → tablet → desktop), aplicando tokens, HTML semántico y diseño flexible basado en el archivo Figma.
 
-### 🔍 Avances actuales
-- Estructura de carpetas y entorno confirmados.  
-- Inicio de la estructura HTML semántica.  
-- Definición de variables de diseño basada en `style-guide.md`.
+### 🔍 Actividades realizadas
+- HTML semántico completo con `article`, `footer`, etiquetado accesible y uso correcto de `<time>`.  
+- Implementación de tokens de diseño:
+  - Sistema de colores según `style-guide.md`.
+  - Tipografías, pesos, line-heights y escala de espaciado.
+  - Contenedor base y estructura global desde `main`.
+- Maquetación Mobile First:
+  - Card en una columna.
+  - Imagen superior recortada con `overflow: hidden`.
+  - Jerarquía tipográfica y espaciado coherente.
+- Maquetación Tablet/Escritorio:
+  - Grid de 2 columnas (imagen lateral izquierda, contenido a la derecha).
+  - Imagen ocupando toda la altura de la tarjeta (`object-fit: cover`).
+  - Footer alineado correctamente dentro de la columna derecha.
+  - Ajuste de proporciones y paddings según Figma.
 
-### 🧠 Próximos pasos
-- Finalizar HTML y tokens.  
-- Maquetar layout móvil.  
-- Validar semántica y accesibilidad base.
+### 💡 Decisiones clave
+- Centrar la card desde `<main>` en lugar de desde el propio componente.  
+- Mantener Mobile First como estructura base del proyecto.  
+- Usar Grid explícito en desktop para controlar filas y columnas de forma profesional.
+
+### 🧠 Aprendizajes
+- Cómo convertir un diseño Figma en layout responsive real usando Grid + flex.  
+- Manejo de imágenes en layouts adaptables (alturas variables, `object-fit`, recortes, overflow).  
+- Cómo modularizar estilos manteniendo claridad con SCSS y tokens.  
+- Técnicas para alinear contenido en layouts mixtos (grid + flex).
 
 ---
 
@@ -84,5 +101,5 @@ Se documentarán aprendizajes, mejoras y conclusiones finales del proyecto.
 
 ---
 
-📅 **Última actualización:** 12/11/2025  
+📅 **Última actualización:** 15/11/2025  
 👤 **Autor:** Jorge Muñoz Wunder
