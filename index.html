@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Componente vista previa de artículo</title>
   <link rel="stylesheet" href="styles/style.css">
+  <script defer src="scripts/main.js"></script>
 </head>
 <body>
   <main><!--Contenedor principal -->
@@ -26,9 +27,15 @@
             <time class="card-time" datetime="2020-06-28">28 Jun 2020</time>
           </div>
         </div>
-        <button type="button" class="card-share" aria-label="Share article">
+        <button type="button" class="card-share" aria-label="Share article" aria-controls="share-panel" aria-expanded="false">
           <img src="images/icon-share.svg" alt="">
         </button>
+        <div id="share-panel" class="card-share-panel">
+          <span class="card-share-label">Share</span>
+          <img src="images/icon-facebook.svg" alt="Share on Facebook">
+          <img src="images/icon-twitter.svg" alt="Share on Twitter">
+          <img src="images/icon-pinterest.svg" alt="Share on Pinterest">
+        </div>
       </footer>
     </article>
   </main>

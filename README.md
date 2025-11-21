@@ -1,85 +1,105 @@
 # 📰 Frontend Mentor – Article Preview Component (Solución de Jorge Muñoz)
 
 ## 🧭 Descripción general
-Proyecto realizado como parte de la **Ruta 3 – Fundamentos de JavaScript**, integrando prácticas profesionales de entorno real y metodología de trabajo por fases (setup, layout, interactividad, QA y retro final).
+Proyecto realizado como parte de la **Ruta 3 – Fundamentos de JavaScript**, integrando prácticas de entorno profesional, estructura modular, accesibilidad, responsive avanzado y Git Flow real.
 
-### 🎯 El desafío
-Los usuarios deben poder:
-- Ver el diseño óptimo del componente según el tamaño de pantalla (mobile, tablet y desktop).
-- Mostrar los enlaces de redes sociales al hacer clic en el icono de compartir.
-
-### 📱 Vista previa
-*(Capturas se añadirán al finalizar la Fase 4)*
-
-### 🔗 Enlaces
-- **Repositorio:** [frontend-mentor-09-article-preview-component](https://github.com/jmunozw/frontend-mentor-09-article-preview-component-master)
-- **Demo en vivo:** *(Se añadirá tras deploy)*
+Este componente replica fielmente el diseño proporcionado en Figma para mobile, tablet y desktop, incluyendo un patrón de interacción distinto según el viewport.
 
 ---
 
-## ⚙️ Proceso de trabajo (Metodología profesional)
+## 🎯 El desafío
+Los usuarios deben poder:
+
+- Ver el diseño óptimo del componente según el tamaño de pantalla (mobile, tablet y desktop).
+- Mostrar/ocultar un panel de compartir (tooltip/banda inferior) al hacer clic en el icono.
+- Cerrar el panel al hacer clic fuera o pulsar `Escape`.
+- Navegar el componente correctamente en términos de accesibilidad (`aria-expanded`, `aria-controls`).
+
+---
+
+## 📱 Vista previa
+*(Se añadirán capturas finales en la Fase 4)*
+
+---
+
+## 🔗 Enlaces
+- **Repositorio:**  
+  https://github.com/jmunozw/frontend-mentor-09-article-preview-component-master  
+- **Demo en vivo:** *(Se añadirá tras deploy definitivo)*
+
+---
+
+## ⚙️ Metodología profesional aplicada
 
 ### 🧩 Fases del proyecto
 | Fase | Descripción | Estado |
 |------|--------------|---------|
 | 0 | Briefing y análisis de materiales (Figma, imágenes, estructura base) | ✅ Completado |
 | 1 | Setup profesional (estructura, Live Server, Git con flujo `main`/`dev`/`feature/*`) | ✅ Completado |
-| 2 | Diseño y Layout (HTML semántico, tokens y layout mobile-first) | ✅ Completado |
-| 3 | Interactividad JS (mostrar/ocultar tooltip de compartir, accesibilidad) | 🟡 En progreso |
-| 4 | QA y Deploy (revisión, Lighthouse, README final, publicación) | ⏸ Pendiente |
+| 2 | Diseño y Layout (HTML semántico, tokens, layout mobile-first) | ✅ Completado |
+| 3 | Interactividad JS (tooltip responsive, accesibilidad, click fuera, Escape) | ✅ Completado |
+| 4 | QA y Deploy (revisión, Lighthouse, README final, publicación) | 🟡 En progreso  |
 | 5 | Retro final (aprendizajes, mejoras, documentación) | ⏸ Pendiente |
 
 ---
 
 ## 🧱 Construido con
-- **HTML5 semántico**
-- **CSS3 (variables, propiedades lógicas, funciones `clamp()` y Mobile First)**
-- **Flexbox + Grid Layout**
-- **JavaScript (DOM y eventos)**
-- **Git Flow profesional (`main` / `dev` / `feature/*`)**
-- **Live Server (entorno local)**
+- **HTML5** semántico y accesible  
+- **CSS3 / SCSS** (propiedades lógicas, tokens, `clamp()`, Mobile First)  
+- **Flexbox + Grid Layout**  
+- **JavaScript** (DOM, eventos, ARIA, interacción accesible)  
+- **Git Flow profesional** (`main` / `dev` / `feature/*`)  
+- **Live Server** para entorno local
 
 ---
 
-## 📘 Aprendizajes hasta ahora (Fases 0–1)
-- Aplicar un flujo de trabajo profesional con ramas (`main`, `dev`, `feature/*`).
-- Organizar un entorno escalable y limpio con carpetas `/styles`, `/scripts`, `/assets`, `/design`.
-- Comprender la importancia de aislar fases del proyecto para simular sprints reales.
-- Mejorar la trazabilidad y orden de commits.
+## 📘 Aprendizajes principales por fase
 
-### 🧩 Fase 2 (Diseño y Layout)
-- Construir un layout **mobile-first real**, con tipografía, spacing y jerarquía basados en tokens.
-- Aprender a controlar imágenes en diseño responsive:
-  - recorte con `overflow: hidden`,
-  - ajuste proporcional con `object-fit: cover`,
-  - alturas dinámicas según Figma.
-- Entender y aplicar layouts mixtos:
-  - Mobile → grid simple en columna.
-  - Desktop → grid explícito de 2 columnas con control manual de filas.
-- Integrar HTML semántico y accesible (uso de `<time>`, roles y etiquetas correctas).
-- Centrar los componentes desde `<main>` en lugar de desde la card, para mantener un flujo de layout más limpio.
+### 🧩 Fase 0–1
+- Configuración de un entorno profesional desde cero.  
+- Git Flow real con ramas `feature/*`, `dev` y `main`.  
+- Organización modular del proyecto.
+
+### 🧩 Fase 2 – Diseño y Layout
+- Construcción de layout **mobile-first real**.  
+- Uso de tokens para mantener consistencia en colores, spacing y tipografía.  
+- Implementación de Grid avanzado para vista desktop.  
+- Control total de imágenes fluidas:  
+  - `object-fit: cover`  
+  - altura dinámica  
+  - recortes limpios mediante `overflow: hidden`  
+- Adaptación pixel-perfect a Figma en mobile, tablet y desktop.
+
+### 🧩 Fase 3 – Interactividad JS
+- Implementación de un panel de compartir **responsive con dos comportamientos**:
+  - **Mobile:** banda inferior detrás del botón.  
+  - **Desktop:** popover flotante con flecha centrada.
+- Gestión accesible de interacción:
+  - `aria-expanded`, `aria-controls`
+  - cierre con tecla Escape  
+  - cierre con clic fuera
+- Listeners inteligentes con cleanup según estado del panel.  
+- Manejo de capas (`z-index`) y posicionamiento (`absolute` + `relative`).  
+- Control de overflow y paddings para evitar recortes en tablet.
 
 ---
 
-## 🚀 Próximos pasos
-- Implementar la **Fase 3 (Interactividad JS)**:
-  - Tooltip de compartir.
-  - Accesibilidad (`aria-expanded`, `aria-controls`, enfoque con teclado, cerrar con `Esc`).
-- Comenzar la **Fase 4**:
-  - Tests visuales.
-  - Validación con Lighthouse y W3C.
-  - Publicación en GitHub Pages.
+## 🚀 Próximos pasos (Fase 4)
+- Validación visual completa.  
+- Test de accesibilidad con Lighthouse y W3C.  
+- Revisión de contrastes y navegación por teclado.  
+- Publicación en **GitHub Pages**.  
 - Añadir capturas finales y métricas al README.
 
 ---
 
 ## 👤 Autor
-- **Nombre:** Jorge Muñoz Wunder  
-- **Frontend Mentor:** [@jmunozw](https://www.frontendmentor.io/profile/jmunozw)  
-- **GitHub:** [@jmunozw](https://github.com/jmunozw)
+**Jorge Muñoz Wunder**  
+- Frontend Mentor: https://www.frontendmentor.io/profile/jmunozw  
+- GitHub: https://github.com/jmunozw
 
 ---
 
-## 🏁 Estado actual del proyecto
-🟢 Activo – Próxima fase: **Fase 3 (Interactividad JS)**  
-📅 Última actualización: 15/11/2025
+## 🏁 Estado actual
+🟢 Activo – Fase 3 completada con éxito.  
+📅 Última actualización: **21/11/2025**
