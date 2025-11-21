@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+:root{
+
+    /* Colors */
+    --clr-white: hsl(0, 100%, 100%);
+    --clr-grey-900: hsl(217, 19%, 35%);
+    --clr-grey-500: hsl(214, 17%, 51%);
+    --clr-grey-400: hsl(212,23%,69%);
+    --clr-grey-200: hsl(210,46%,95%);
+
+    /* Main source */
+    --ff-body: 'Manrope', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    /* Tiypography (scales) */
+
+    --fs-body: 0.8125rem; /* 13px */
+
+    --lh-normal: 1.6;
+    --lh-tight: 1.1;
+
+    /* Spacing (design scale) */
+    --spacing-0:  0rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
+    --spacing-600: 3rem;
+    --spacing-700: 3.5rem;
+    --spacing-800: 4rem;
+    --spacing-1300: 6.5rem;
+    --spacing-2000: 10rem;
+
+    /* Container */
+    --container-max: 45.625rem;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-normal);
+    background-color: var(--clr-grey-200);
+    color: var(--clr-grey-900);
+    
+}
+
+main{
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding-inline: var(--spacing-400)
+}
+
+img{
+    max-inline-size: 100%;
+    block-size: auto;
+    height: auto;
+    display: block;
+}
+
+button{
+    cursor: pointer;
+}
+
+.card{
+    max-width: var(--container-max);
+    background-color: var(--clr-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: grid;
+    gap: var(--spacing-400);
+    
+    
+
+    &-body{
+        display: grid;
+        margin-inline: var(--spacing-300);
+        gap: var(--spacing-300);
+    }
+
+    &-title{
+        max-inline-size: 20ch;
+        line-height: var(--lh-tight);
+        font-size: 1.25rem;
+        font-weight: var(--fw-bold);
+    }
+
+    &-text{
+        color: var(--clr-grey-500);
+    }
+
+    &-meta{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: var(--spacing-300);
+        padding-block-end: var(--spacing-200);
+        position: relative; /* Importante para posicionar el panel de compartir */
+    }
+
+    &-profile{
+        display: flex;
+        gap: var(--spacing-200);
+    }
+
+    &-avatar{
+        max-width: var(--spacing-500);
+        max-height: var(--spacing-500);
+        border-radius: 50%;
+    }
+
+    &-name{
+        font-weight: var(--fw-bold);
+    }
+
+    &-time{
+        color: var(--clr-grey-500);
+    }
+
+    &-share{
+        display: flex;
+        inline-size: var(--spacing-400);
+        block-size: var(--spacing-400);
+        border-radius: 50%;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--clr-grey-200);
+        position: relative;
+        z-index: 2;
+    }
+
+    &-share-panel{
+        display: none;
+        position: absolute;
+        inset-inline: 0; //Ocupa todo el ancho del footer
+        inset-block-end: 0; //Pegado abajo 
+        background-color: var(--clr-grey-900);
+        color: var(--clr-grey-200);
+        padding: var(--spacing-300) var(--spacing-300);
+        align-items: center;
+        gap: var(--spacing-200);
+        border-radius: 0 0 0.5rem;
+        z-index: 1;
+    }
+
+    &-share-panel.is-visible{
+        display: flex;
+    }
+
+    &-share-label{
+        color: var(--clr-grey-400);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+}
+
+
+@media(min-width: 768px){
+
+    main{
+        padding-inline: clamp(5rem, 10vw, 6rem);
+    }
+
+    .card{
+        padding: 0;
+        grid-template-columns: 1fr 1.1fr;
+        overflow: visible;
+        position: relative;
+        
+    
+        &-media{
+            grid-column: 1;
+            grid-row: 1 /span 2;
+            
+            img{
+                inline-size: 100%;
+                block-size: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem 0 0 0.5rem;
+            }
+        }
+
+        &-body{
+            grid-column: 2;
+            padding-block-start: var(--spacing-400);       
+        }
+
+        &-text{
+            max-inline-size: 37ch;
+        }
+
+        &-meta{
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        &-share-panel{
+            position: absolute;
+            justify-content: center;
+            inset-block-end: calc(100% + 0.75rem);
+            inset-inline-start: 40%;
+            transform: translateX(28%);
+            padding-inline: var(--spacing-400);
+            padding-block: var(--spacing-200);
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 2rem hsla(217, 19%, 35%, 0.3);
+        }
+
+        &-share-panel::after {
+        content: "";
+        position: absolute;
+        inset-block-start: 100%; // justo debajo del panel
+        inset-inline-start: 50%; // punto medio del panel                
+        transform: translateX(-50%);
+        inline-size: 0;
+        block-size: 0;
+        border-width: 0.6rem;
+        border-style: solid;
+        border-color: var(--clr-grey-900) transparent transparent transparent;
+        }
+    }
+}
+
+@media(min-width:1024px){
+    .card{
+        &-share-panel{
+            transform: translateX(32%);
+        }
+    }
+}
