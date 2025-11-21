@@ -26,7 +26,7 @@
   --spacing-1300: 6.5rem;
   --spacing-2000: 10rem;
   /* Container */
-  --container-max: 45.7rem;
+  --container-max: 45.625rem;
 }
 
 * {
@@ -89,6 +89,7 @@ button {
   justify-content: space-between;
   padding-inline: var(--spacing-300);
   padding-block-end: var(--spacing-200);
+  position: relative; /* Importante para posicionar el panel de compartir */
 }
 .card-profile {
   display: flex;
@@ -107,18 +108,48 @@ button {
 }
 .card-share {
   display: flex;
-  width: var(--spacing-400);
-  height: var(--spacing-400);
+  inline-size: var(--spacing-400);
+  block-size: var(--spacing-400);
   border-radius: 50%;
   border: none;
   align-items: center;
   justify-content: center;
+  background-color: var(--clr-grey-200);
+  position: relative;
+  z-index: 2;
+}
+.card-share-panel {
+  display: none;
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  background-color: var(--clr-grey-900);
+  color: var(--clr-grey-200);
+  padding: var(--spacing-300) var(--spacing-300);
+  align-items: center;
+  gap: var(--spacing-200);
+  border-radius: 0 0 0.5rem;
+  z-index: 1;
+}
+.card-share-panel.is-visible {
+  display: flex;
+}
+.card-share-label {
+  color: var(--clr-grey-400);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
+  main {
+    padding-inline: clamp(5rem, 10vw, 6rem);
+  }
   .card {
     padding: 0;
     grid-template-columns: 1fr 1.1fr;
+    overflow: visible;
+    position: relative;
   }
   .card-media {
     grid-column: 1;
@@ -128,6 +159,7 @@ button {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    border-radius: 0.5rem 0 0 0.5rem;
   }
   .card-body {
     grid-column: 2;
@@ -139,6 +171,34 @@ button {
   .card-meta {
     grid-column: 2;
     grid-row: 2;
+  }
+  .card-share-panel {
+    position: absolute;
+    justify-content: center;
+    inset-block-end: calc(100% + 0.75rem);
+    inset-inline-start: 40%;
+    transform: translateX(28%);
+    padding-inline: var(--spacing-400);
+    padding-block: var(--spacing-200);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 2rem hsla(217, 19%, 35%, 0.3);
+  }
+  .card-share-panel::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    inline-size: 0;
+    block-size: 0;
+    border-width: 0.6rem;
+    border-style: solid;
+    border-color: var(--clr-grey-900) transparent transparent transparent;
+  }
+}
+@media (min-width: 1024px) {
+  .card-share-panel {
+    transform: translateX(32%);
   }
 }
 

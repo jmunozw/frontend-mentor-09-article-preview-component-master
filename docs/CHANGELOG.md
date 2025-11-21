@@ -84,8 +84,42 @@ Construir el layout responsive (mobile → tablet → desktop), aplicando tokens
 ---
 
 ## 🧩 Fase 3 – Interactividad JS
-**Estado:** ⏸ Pendiente  
-Prevista para añadir el comportamiento del botón de compartir, accesibilidad con teclado y gestión del foco.
+
+**Fecha:** 15–21/11/2025
+**Estado:** ✅ Completada
+
+### 🎯 Objetivo
+
+Añadir interactividad accesible para mostrar/ocultar el panel de compartir según resolución (mobile vs desktop), siguiendo estándares ARIA y buenas prácticas de usabilidad.
+
+### 🔍 Actividades realizadas
+
+- Implementación del botón de compartir con aria-controls y aria-expanded.
+- Lógica JS para abrir y cerrar el panel dinámicamente.
+- Implementación de:
+- Cierre con clic fuera del componente.
+- Cierre con tecla Escape.
+- Limpieza automática de listeners al cerrar.
+- Panel adaptado a dos comportamientos distintos:
+- Mobile: banda inferior bajo el footer, con el botón visible por encima.
+- Tablet/Desktop: popover flotante centrado sobre el botón, con “flecha” triangular.
+- Correcciones de z-index, posicionamiento relativo/absoluto y recortes.
+- Ajustes fluidos del panel para que no salga del viewport.
+
+### 💡 Decisiones clave
+
+- Mantener la lógica encapsulada en un solo listener principal.
+- Ajustar comportamiento según viewport sin duplicar código JS.
+- Respetar funcionalidades accesibles (Escape, clic fuera, aria-expanded).
+- Mantener separación estricta entre estilo (SCSS) e interactividad (JS).
+
+### 🧠 Aprendizajes
+
+- Cómo construir un popover accesible sin librerías.
+- Manejo avanzado de eventos: bubbling, listeners anidados y cleanup.
+- Diferencias entre patrones UX mobile vs desktop dentro del mismo componente.
+- Control preciso de capas (z-index) y posicionamiento absoluto relativo al contenedor.
+- Importancia de depurar con DevTools para seguir flujo de variables y estado.
 
 ---
 
@@ -101,5 +135,5 @@ Se documentarán aprendizajes, mejoras y conclusiones finales del proyecto.
 
 ---
 
-📅 **Última actualización:** 15/11/2025  
+📅 **Última actualización:** 21/11/2025  
 👤 **Autor:** Jorge Muñoz Wunder
