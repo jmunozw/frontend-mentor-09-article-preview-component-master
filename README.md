@@ -25,7 +25,8 @@ Los usuarios deben poder:
 ## 🔗 Enlaces
 - **Repositorio:**  
   https://github.com/jmunozw/frontend-mentor-09-article-preview-component-master  
-- **Demo en vivo:** *(Se añadirá tras deploy definitivo)*
+- **Demo en vivo:**
+  https://jmunozw.github.io/frontend-mentor-09-article-preview-component-master/
 
 ---
 
