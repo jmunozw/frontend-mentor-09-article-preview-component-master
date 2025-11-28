@@ -123,17 +123,50 @@ Añadir interactividad accesible para mostrar/ocultar el panel de compartir seg�
 
 ---
 
-## 🧩 Fase 4 – QA y Deploy
-**Estado:** ⏸ Pendiente  
-Prevista para validación con Lighthouse, W3C y publicación en GitHub Pages.
+## 🧩 Fase 4 – QA y Deploy  
+**Fecha:** 21/11/2025  
+**Estado:** ✅ Completada
+
+### 🔍 Actividades realizadas
+- Revisión visual del componente en mobile, tablet y desktop.  
+- Verificación de accesibilidad básica (navegación por teclado, aria-expanded).  
+- Validación general del HTML y CSS.  
+- Generación de la demo final con GitHub Pages.  
+- Actualización del README con enlaces y estado final.
+
+### 💡 Resultados
+- El componente se visualiza correctamente en todos los breakpoints.  
+- El panel de compartir funciona con los patrones de interacción requeridos.  
+- No hay errores en consola.  
+- Publicación exitosa en GitHub Pages.
 
 ---
 
-## 🧩 Fase 5 – Retro final
-**Estado:** ⏸ Pendiente  
-Se documentarán aprendizajes, mejoras y conclusiones finales del proyecto.
+## 🧩 Fase 5 – Retro final  
+**Fecha:** 22/11/2025  
+**Estado:** ✅ Completada
+
+### ⭐ Lo más fácil
+- La estructura HTML semántica y la maquetación Mobile First.  
+- Organización de carpetas y tokens al inicio del proyecto.
+
+### ⭐ Lo más difícil
+- Posicionar y adaptar el tooltip con dos comportamientos (mobile y desktop).  
+- Ajustar z-index, overflow y centrado de la flecha.  
+- Mantener la interactividad accesible sin usar librerías (Escape, clic fuera, aria-expanded).
+
+### ⭐ Lo que más aprendí
+- Cómo crear un popover accesible desde cero.  
+- Cómo combinar Grid + Flex para lograr un diseño fiel a Figma.  
+- Cómo depurar interactividad con DevTools y seguir estado/variables.  
+- Cómo planificar un proyecto con Git Flow real (`feature → dev → main`).  
+
+### ⭐ Qué haría diferente la próxima vez
+- Reducir microajustes de posicionamiento creando un componente más reutilizable.  
+- Modularizar el JS en funciones pequeñas desde el principio.  
+- Definir breakpoints y patrones de espaciado antes de maquetar.
 
 ---
 
-📅 **Última actualización:** 21/11/2025  
+📅 **Última actualización:** 22/11/2025  
 👤 **Autor:** Jorge Muñoz Wunder
